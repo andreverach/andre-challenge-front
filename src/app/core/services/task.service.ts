@@ -18,7 +18,7 @@ export class TaskService {
     return this.httpClient.get<Task[]>(`${environment.apiBaseV1}tasks`)
     .pipe(
       catchError((error: HttpErrorResponse) => 'Error'),//para manejar errores
-      tap((response: any) => {
+      tap((response: any) => {//aqui podemos realizar alguna accion antes de retornar la rpta como tal
         console.log(response);
       })
     );

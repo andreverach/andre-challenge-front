@@ -32,8 +32,7 @@ export class LoginComponent {
   signIn() {
     if(!this.form.valid){
       this.form.markAllAsTouched();
-    }else{
-      console.log("Click");      
+    }else{            
       const user: User = this.form.value;
       this.userService.signIn(user)
       .subscribe({
@@ -56,7 +55,7 @@ export class LoginComponent {
         }
       });
       dialogRef.afterClosed().subscribe((dialogResult: boolean) => {
-        if(dialogResult){        
+        if(dialogResult){
           const user: User = this.form.value;
           this.userService.signUp(user)
           .subscribe({

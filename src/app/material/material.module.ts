@@ -8,6 +8,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -19,7 +21,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatIconModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatFormFieldModule,
@@ -29,7 +32,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatIconModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

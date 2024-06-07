@@ -19,7 +19,6 @@ Esta es una aplicación de Express escrita en TypeScript para gestionar tareas. 
 ## Características
 
 - **CRUD de Tareas**: Crear, leer, actualizar y eliminar tareas.
-- **Seguridad**: Configuración de cabeceras de seguridad usando Helmet.
 - **Validación**: Validación de datos de entrada.
 - **Despliegue**: Desplegado en Netlify.
 

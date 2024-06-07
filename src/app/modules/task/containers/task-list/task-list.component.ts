@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Task } from 'src/app/core/models/task';
 import { TaskService } from 'src/app/core/services/task.service';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-task-list',
@@ -16,6 +17,7 @@ export class TaskListComponent implements OnInit {
   displayedColumns: string[] = ['title', 'description', 'createdAt', 'status', 'actions'];
   form!: FormGroup;
   currentId: string = "";
+  tasksLoading: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -26,9 +28,7 @@ export class TaskListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getTasks();
-  }
-
-  
+  } 
 
   buildForm(){
     this.form = this.formBuilder.group({
@@ -41,11 +41,9 @@ export class TaskListComponent implements OnInit {
     if(!this.form.valid){
       this.form.markAllAsTouched();
     }else{ 
-      console.log("agregar");
       const newTask: Task = this.form.value;
       if(this.currentId === '') {
         this.taskService.addTask(newTask).subscribe(response => {
-          console.log(response)
           this.getTasks();
         });
       } else {
@@ -55,15 +53,18 @@ export class TaskListComponent implements OnInit {
   }
 
   getTasks() {
+    this.tasksLoading = true;
     this.dataSource = new MatTableDataSource<Task>([]);
     this.taskService.getTasks().subscribe(response => {
       this.dataSource = new MatTableDataSource<Task>(response);
+      this.tasksLoading = false;
+      this.resetFormFilter();
     });
   }
 
   changeTaskInfo(task:Task, id: string, event?: any) {
-    console.log(event);//evento
-    console.log(id);//id
+    //console.log(event);//evento
+    //console.log(id);//id
     if(event) task.status = event.checked;
     this.taskService.updateTask(task, id).subscribe(response => {
       this.getTasks();
@@ -77,12 +78,28 @@ export class TaskListComponent implements OnInit {
   }
 
   deleteTask(id: string) {
-    this.taskService.deleteTask(id).subscribe(response => {
-      this.getTasks();
+    const dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+      width: '450px',
+      data: {
+        message: 'Desea eliminar la tarea?',
+        title: 'Confirmar acción',
+      }
     });
+    dialogRef.afterClosed().subscribe((dialogResult: boolean) => {
+      if(dialogResult){
+        this.taskService.deleteTask(id).subscribe(response => {
+          this.getTasks();
+        });         
+      }
+    });     
   }
 
   goToBack() {
     this.router.navigate(['/']);
   }
+
+  resetFormFilter() {
+    this.form.reset();
+    this.currentId = "";
+  } 
 }

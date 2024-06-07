@@ -1,1 +1,21 @@
-<p>confirm-dialog works!</p>
+<h2 mat-dialog-title class="text-indigo-600">
+    <mat-icon class="text-lg mt-1">
+      check
+    </mat-icon>
+    Confirmar acción
+  </h2>
+  <div mat-dialog-content>  
+    <p >
+      {{ data.title }}
+    </p>
+    <ul class="list-disc ml-3">
+      <li>
+        {{ data.message }}
+      </li>
+    </ul>  
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>  
+    <button mat-button color="primary" (click)="confirmAction()" cdkFocusInitial>Aceptar</button>
+  </div>
+  

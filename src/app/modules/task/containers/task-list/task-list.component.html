@@ -19,7 +19,7 @@
   
     <mat-card>
       <mat-card-content>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
   
           <!-- Título Column -->
           <ng-container matColumnDef="title">
@@ -65,8 +65,11 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <!-- Data Rows -->
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-        </table>
+          
+        </table>  
+        <div class="loading-container" *ngIf="tasksLoading">
+          <mat-spinner></mat-spinner>
+        </div>     
         <hr />
         <button mat-raised-button color="primary" (click)="goToBack()">Ir al inicio</button>
       </mat-card-content>
