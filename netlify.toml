@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/atom-fe-challenge-template-ng-15"
+  publish = "dist/atom-challenge-fe-template-v15"
   command = "ng build"
 [[redirects]]
   from = "/*"
