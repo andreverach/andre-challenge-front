@@ -1,4 +1,4 @@
-# My Express TypeScript App
+# My Angular App
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
