@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/atom-fe-challenge-template-ng-15"
+  command = "ng build"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

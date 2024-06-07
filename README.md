@@ -1,36 +1,51 @@
-# ATOM FE CHALLENGE TEMPLATE - ANGULAR
+# My Express TypeScript App
 
-Este proyecto es una plantilla con lo necesario para comenzar a desarrollar el front-end de la aplicación de la prueba técnica de Atom. Se base en Angular con la versión 15.2.1.
-Se ha realizado la instalación y configuración de varias dependencias necesarias para el desarrollo de la aplicación, como por ejemplo: Angular Material.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Instrucciones
-Siéntete libre de clonar este repositorio y utilizarlo como base para el desarrollo de la aplicación. Sigue las indicates de la prueba técnica para completar la aplicación y desarrolla como más te sientas cómodo.
+## Descripción
 
-De igual manera puedes documentar dentro de este archivo todo lo que deseas contar sobre tu desarrollo, como por ejemplo, decisiones de diseño, problemas encontrados, etc.
+Esta es una aplicación de Express escrita en TypeScript para gestionar tareas. Fue desarrollada como una prueba técnica para [AtomChat](https://atomchat.io/).
 
-## Comentarios sobre el desarrollo
-...
+## Tecnologías Usadas
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular**: Framework para aplicaciones web desarrollado por Google. En esta aplicación, hemos usado Angular 15 para su estructura modular y capacidades de desarrollo rápido.
+- **Angular Material**: Conjunto de componentes de interfaz de usuario basados en Material Design para Angular.
+- **TypeScript**: Superset de JavaScript que añade tipado estático. Angular está completamente escrito en TypeScript.
+- **SCSS**: Preprocesador CSS que añade funcionalidades como variables, anidamiento, y mixins para mantener el CSS modular y reutilizable.
+- **Reactive Forms (Formularios Reactivos)**: Módulo de Angular para el manejo de formularios con un enfoque basado en la programación reactiva.
+- **RxJS**: Librería para programación reactiva basada en observables, utilizada extensamente en Angular para la gestión de eventos asincrónicos y datos.
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **CRUD de Tareas**: Crear, leer, actualizar y eliminar tareas.
+- **Seguridad**: Configuración de cabeceras de seguridad usando Helmet.
+- **Validación**: Validación de datos de entrada.
+- **Despliegue**: Desplegado en Netlify.
 
-## Build
+## Demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Puedes ver una demo en vivo de la aplicación [aquí](https://tu-demo-en-vercel.vercel.app) 🌐
 
-## Running unit tests
+## Clonar el Repositorio
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para clonar y ejecutar esta aplicación en tu máquina local, sigue estos pasos:
 
-## Running end-to-end tests
+### Prerrequisitos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js (v14.x o superior)
+- npm (v6.x o superior)
+- Angular CLI 
 
-## Further help
+### Instalación
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clona el repositorio:
+
+   ```sh
+   git clone https://github.com/andreverach/andre-challenge-front.git
+   cd tu-repo
+
+1. Instala las dependencias:
+
+   ```sh
+   npm install
